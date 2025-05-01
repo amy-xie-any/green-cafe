@@ -1,0 +1,166 @@
+/* Here's how you can define your colors once and then use them by name */
+:root {
+  --main-color: #8fbcb5;
+  --darker-color: #719e9f;
+  --darkest-color: #2f4858;
+}
+
+/* General CSS styles on HTML elements */
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  color: var(--darkest-color); /* How to use your defined colors */
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+footer {
+  background-color: var(--darkest-color);
+  margin-top: 50px;
+}
+
+h1, h2 {
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 62px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: var(--darker-color);
+}
+
+/* Applies style to 'SVG' elements that are children of an 'a' element */
+a svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--main-color);
+  transition: fill .2s ease;
+}
+
+a svg:hover {
+  fill: var(--darker-color);
+}
+
+
+/* Custom CSS design with classes */
+
+.container {
+  padding: 24px;
+  margin: 0 auto; /* applies 0 margin to top+bottom, and 'auto' centers horizontally */
+  max-width: 1000px; /* to not have container go too wide on big screens devices */
+}
+
+.container-grid {
+  display: grid; /* Creates a CSS grid container */
+  gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Add 4 equal columns (1 fraction each) */
+}
+
+.background-image {
+  background-image: /* Adding lienar gradient on the image makes our text more legible */
+    linear-gradient(rgba(50, 50, 50, 0.3),rgba(50, 50, 50, 0.5)),
+    url(images/background.jpg);
+  background-size: cover;
+  padding: 120px 20px;
+  color: white;
+  text-align: center;
+}
+
+.background-image p {
+  font-size: 20px;
+}
+
+.background-image h1 {
+  line-height: 1;
+}
+
+.background-image a {
+  color: white;
+}
+
+.button-main {
+  background: var(--main-color);
+  padding: 10px 30px;
+  border-radius: 4px;
+  transition: background .2s ease; /* Allows color to change gradually over .2 seconds */
+  display: inline-block;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+.button-main:hover {
+  background: var(--darker-color);
+}
+
+.card-green {
+  width: 100%;
+  background: var(--main-color);
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background .2s ease;
+}
+
+.card-green:hover {
+  background:var(--darker-color);
+}
+
+.navbar{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(108px, 1fr));
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-socials {
+  margin: 60px auto;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-socials li {
+  display: inline;
+  margin: 0 8px;
+}
+
+.byline h3 {
+  margin-bottom: 0;
+}
+
+.byline time {
+  font-size: smaller;
+  opacity: 0.8;
+}
+
+
+/* Media Queries -- Where you can make CSS adjustments depending on screen size */
+@media (max-width: 700px) { /* Applies below style when < 700px screen width */
+  .container-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
